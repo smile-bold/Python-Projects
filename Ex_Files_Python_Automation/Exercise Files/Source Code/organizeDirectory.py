@@ -9,13 +9,15 @@ SUBDIRECTORIES = {
 def pickDirectory(value):
     for category, suffixes in SUBDIRECTORIES.items():
         for suffix in suffixes:
-            if suffix == value:
+            if suffix == value: #multidimensional array where the condition is
+                # if the second loop has the 'suffix' element equivalent to the value input 
+                # as a parameter then return the category. 
                 return category
     return 'MISC' #If filetype doesn't exist in our dictionary
 
 def organizeDirectory():
     for item in os.scandir():
-        if item.is_dir():
+        if item.is_dir(): 
             continue
         filePath = Path(item)
         filetype = filePath.suffix.lower()
